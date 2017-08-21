@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tienda De ropa - "Lisa Junior"</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="tienda.css">
+    <script type="text/javascript" src="tienda.js"></script>
+</head>
+
+<body>
+
+	<div class="vx row">
+		<center>
+			<h1 class=xd7>Venta Diaria -  Tienda Lisa Junior</h1>
+		</center>
+		<div class="col-md-12">
+		<center>
+			<button type="button" class="q btn" onclick="estoc()">Stock De Venta</button>
+			<button type="button" class="q btn" onclick="venta1()">Nueva Venta en Efectivo</button>
+			<button type="button" class="q btn" onclick="venta2()">Nueva Venta Credito</button>
+			<button type="button" class="q btn" onclick="blabla()">Agregar</button>
+			<button type="button" class="q btn" onclick="expom();mostrararray()">Exportar .doc</button>
+		</center>	
+	</div>
+	</div>
+	
+
+<div class="container" id="container">
+	
+
+	<div class="contenedor col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1" id="ventaone">
+			<div class="col-md-12">
+				<center>
+					<h1 class=xd5>Nueva Venta en Efectivo/Debito</h1>
+				</center>
+			</div>
+			<div class="cajatabla col-md-6 col-lg-6" style="">
+				<div class="caja-table">
+					<table class="table" id="table">
+						<tr>
+							<th class="xd">Indumentaria</th>
+							<th class="xd">Precio</th>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<div class="ff col-md-6 col-lg-6" style="">
+				<div class="">
+					<div class="cajaform">
+						<div class="form-group">
+							<label class="xd1">Indumentaria</label>
+							<select id="ropa" class="form-control">
+								<option disabled selected>Elija la ropa</option>
+							</select>
+						</div>						
+						<div class="form-group">
+							<label class="xd1">Precio</label>
+							<input type="number" class="input" id="precio">
+						</div>
+						<a href="#limp1" class="ww"><button type="button" class="xr btn btn-block" onclick="agregar()">Sumar venta</button></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="">
+						<div class="cajaform1">
+							<div class="form-group">
+								<label class="xs">
+									<h1>
+										<strong>Ingreso actual</strong>
+									</h1>
+								</label>
+							</div>
+							<div class="form-group">
+								<div class="resultado" id="resultado">
+									<label>$ 0</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- los botones de cancelar y reiniciar, se activan a sumar algun numero, y se van al apretarlos, o al apretar los botones principales -->
+			<div class="rr row" id="limp1">
+				<div>
+					<button type="button" class="xr btn btn-block" style="margin: 10px" onclick="sumarventas()">Confirmar y Finalizar Venta</button>
+				</div>
+				<div class="col-md-5 col-md-5 col-md-offset-1">
+					<button type="button" class="xrt btn btn-block" onclick="xagr();ventaoff()">Cancelar Venta</button>
+				</div>
+
+				<div class="col-md-5">
+					<button type="button" class="xr btn btn-block" onclick="ventaoffr();xagr()">Reiniciar Venta</button>
+				</div>
+			</div>
+	</div>
+
+
+
+	<div class="contenedor col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1" id="ventados">
+			<div class="col-md-12 col-lg-12">
+				<center>
+					<h1 class=xd5>Nueva Venta en Credito</h1>
+				</center>
+			 </div>
+			<div class="cajatabla col-md-6 col-lg-6">
+				<div class="caja-table" id="df">
+					<table class="table" id="tableX">
+						<tr>
+							<th class="xd">Indumentaria</th>
+							<th class="xd">Precio</th>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="ff col-md-6 col-lg-6">
+				
+					<div class="cajaform">
+						<div class="form-group">
+							<label class="xd1">Indumentaria</label>
+							<select class="form-control" id="ropaX">
+								<option disabled selected>Elija la ropa</option>
+							</select> 
+						</div>						
+						<div class="form-group">
+							<label class="xd1">Precio</label>
+							<input type="number" class="input" id="precioX">
+						</div>
+						<a href="#limp2" class="ww"><button type="button" class="xr btn btn-block" onclick="agregarX()">Sumar venta</button></a>
+					</div>
+				
+				<div class="row" >
+					<div class="">
+						<div class="cajaform1">
+							<div class="form-group">
+								<label class="xs"><h1><strong>Ingreso actual</strong></h1></label>
+							</div>
+							<div class="form-group">
+								<div class="resultado" id="resultadoX">
+									<label>$ 0</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="rr row" id="limp2">
+			<div >
+				<button type="button" class="xr btn btn-block" style="margin: 10px" onclick="ventaoff21()">Calcular valor en cuotas</button>
+			</div>
+			<div class="col-md-5 col-md-offset-1">
+				<button type="button" class="xrt btn btn-block " onclick="ventaoff2();xagr()">Cancelar venta</button>
+			</div>
+
+			<div class="col-md-5">
+				<button type="button" class="xr btn btn-block" onclick="ventaoff2r();xagr()">Reiniciar venta</button>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="ss row" id="cuotash">
+		<form class="uu col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+		<div class="aa row">
+			<div class="col-md-5">
+				<select id="selecuo" class="form-control">
+	  				<option value="0" disabled selected> Seleccionar Cuotas</option>
+	  				<option value="1"> 1 Cuota - 0%</option>
+	  				<option value="2"> 3 Cuotas - 5%</option>
+	  				<option value="3"> 6 Cuotas - 10%</option>
+	  				<option value="4"> 12 Cuotas - 20%</option>
+	  				<option value="5"> 18 Cuotas - 30%</option>
+				</select>
+				<div id="contenedortes28" class="zz col-md-12"></div>
+			</div>
+			<div class="col-md-7">
+				<button type="button" class="xr btn btn-block" onclick="calcuo()">Calcular Intereses</button>
+				<button type="button" class="xr btn btn-block" onclick="sumarventasX()">Confirmar Venta</button>
+				<button type="button" class="xr btn btn-block" onclick="ventaoff2x()">Volver</button>
+				</div>
+				<div class="col-md-12 col-lg-12">
+					<div id="contenedortest48" class="zz1 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3"></div>					
+				</div>
+			</div>
+			
+		</form>
+	</div>
+
+	<div class="hx col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1" id="sumar">
+		<div class="bv col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+			<div class="h row">
+				<h3 class="ho">Indumentaria</h3>
+					<input type="text" id="input" class="u input" placeholder="Ingrese la ropa para la lista">
+					
+			</div>
+			<div class="row">
+				<div class="didi col-md-7">
+						<button class="n btn btn-block" onclick="agregarC()">Agregar indumentaria</button>
+					</div>
+					<div class="didi1 col-md-4">
+						<button class="c btn btn-block" onclick="cerrar()" id="cuo">Terminar</button>
+					</div>
+			</div>
+			
+			<div class="h row">
+				<h3 class="hb">Stock Actual</h3>
+				<div id="ropase" class="x"></div> 
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+		<div class="bx col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" id="stock">
+		<div class="dd row">
+			<div class="v1 col-md-12 col-lg-12">
+				<h3 class="h7">Total de ingresos registrados</h3>
+				</div>
+			<div id="aves" class="m col-md-12 col-lg-12	" style=""></div>
+		</div>
+
+		<div class="dd row">
+			<div class="v1 col-md-12 col-lg-12">
+				<h3 class="h7">Ventas realizadas</h3>
+				</div>
+			<div id="numven" class="m col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3" style=""></div>			
+		</div>
+
+		<div class="dd row">
+			<div class="v col-md-12 col-lg-12">
+				<h3 class="h3">Indumentaria vendida(cantidad)</h3>
+			</div>
+			<div id="resultadu" class="y col-md-12 col-lg-12" style=""></div>
+			<div id="l3" style="display: none"></div>
+		</div>	
+		</div>
+	</div>
+
+		<div class="hx col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1" id="textoo" style="display: none">
+		<div class="bv col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+			<div class="h row">
+				<h3 class="ho">Desea exportar el resumen del dia?</h3>
+				<button class="n btn btn-block" onclick="expo()">Exportar .doc</button>
+				<div id="test2" style="display: none"></div>
+				</div>
+
+</div>
+</body>
+</html>
